@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b14">
+  <meta name="description" content="Nexus AI — Your intelligent workspace for chat, coding, and app building.">
+
+  <title>Nexus AI — AI Workspace</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="app">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-logo">N</div>
+        <span>Nexus<span class="accent">AI</span></span>
+        <button class="icon-btn close-sidebar" id="closeSidebar" aria-label="Close menu">×</button>
+      </div>
+
+      <button class="new-chat" id="newChat">＋ New Chat</button>
+
+      <p class="section-label">WORKSPACE</p>
+
+      <nav class="nav">
+        <button class="nav-item active" data-tool="chat">✦ <span>AI Chat</span></button>
+        <button class="nav-item" data-tool="builder">⌘ <span>App Builder</span></button>
+        <button class="nav-item" data-tool="coding">⌨ <span>AI Coding</span></button>
+        <button class="nav-item" data-tool="image">▧ <span>Image Studio</span></button>
+        <button class="nav-item" data-tool="video">▷ <span>Video Studio</span></button>
+        <button class="nav-item" data-tool="music">♫ <span>Music Studio</span></button>
+        <button class="nav-item" data-tool="projects">▦ <span>My Projects</span></button>
+      </nav>
+
+      <p class="section-label history-heading">RECENT CHATS</p>
+      <div id="historyList" class="history-list"></div>
+
+      <div class="sidebar-bottom">
+        <button class="nav-item" id="themeToggle">☼ <span>Toggle Theme</span></button>
+        <div class="profile">
+          <div class="avatar">N</div>
+          <div class="profile-info">
+            <strong>Nexus User</strong>
+            <small>Personal Workspace</small>
+          </div>
+          <span class="online-dot"></span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+        <div class="breadcrumb">
+          <span>Workspace</span>
+          <span class="muted">/</span>
+          <strong id="pageTitle">AI Chat</strong>
+        </div>
+
+        <div class="top-actions">
+          <span class="status"><i></i> Workspace Ready</span>
+          <button class="icon-btn" id="clearChat" title="Clear current chat">↻</button>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="welcome" id="welcome">
+          <div class="welcome-badge"><span>✦</span> YOUR AI WORKSPACE</div>
+
+          <h1>Build something<br><span class="gradient-text">extraordinary.</span></h1>
+
+          <p class="subtitle">
+            Your ideas deserve more than answers.<br class="desktop-break">
+            Turn your imagination into something real with Nexus AI.
+          </p>
+
+          <div class="capabilities">
+            <div class="capability">
+              <div class="cap-icon purple">✦</div>
+              <div><strong>AI Assistant</strong><small>Think, write and explore</small></div>
+            </div>
+
+            <div class="capability">
+              <div class="cap-icon blue">⌘</div>
+              <div><strong>App Builder</strong><small>Turn ideas into projects</small></div>
+            </div>
+
+            <div class="capability">
+              <div class="cap-icon green">&lt;/&gt;</div>
+              <div><strong>AI Coding</strong><small>Build and improve code</small></div>
+            </div>
+          </div>
+
+          <p class="suggestion-label">START WITH AN IDEA</p>
+
+          <div class="suggestions">
+            <button class="suggestion" data-prompt="Help me plan an AI-powered application.">✧ <span>Plan an AI application</span> <b>↗</b></button>
+            <button class="suggestion" data-prompt="Write a responsive landing page using HTML, CSS and JavaScript.">⌘ <span>Create a website</span> <b>↗</b></button>
+            <button class="suggestion" data-prompt="Help me find and fix bugs in my code.">⌁ <span>Debug my code</span> <b>↗</b></button>
+            <button class="suggestion" data-prompt="Help me design a modern dashboard.">▦ <span>Design a dashboard</span> <b>↗</b></button>
+          </div>
+        </div>
+
+        <div class="messages" id="messages" aria-live="polite"></div>
+
+        <div class="composer-wrap">
+          <div class="composer">
+            <textarea id="promptInput" rows="1" placeholder="Message Nexus AI..." aria-label="Message Nexus AI"></textarea>
+
+            <div class="composer-bottom">
+              <div class="composer-tools">
+                <button class="tool-chip" id="attachButton" title="Attachment support can be added later">＋ <span>Attach</span></button>
+                <span class="model-chip"><i></i> Demo Mode</span>
+              </div>
+
+              <button class="send-btn" id="sendBtn" aria-label="Send message">↑</button>
+            </div>
+          </div>
+
+          <p class="disclaimer">
+            Nexus AI can make mistakes. Connect an AI API for real AI responses.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+  </html>
