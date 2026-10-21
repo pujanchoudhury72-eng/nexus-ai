@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus AI</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: #f5f7ff;
+    }
+
+    header {
+      padding: 20px;
+      border-bottom: 1px solid #27304a;
+      background: #11182b;
+    }
+
+    header h1 { margin: 0; color: #8da7ff; }
+    header p { color: #aab4cc; margin-bottom: 0; }
+
+    main { max-width: 1000px; margin: auto; padding: 20px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      background: #151e33;
+      border: 1px solid #2c3855;
+      padding: 18px;
+      border-radius: 14px;
+    }
+
+    .card h3 { margin-top: 0; font-size: 16px; }
+
+    textarea, input {
+      width: 100%;
+      padding: 13px;
+      margin: 8px 0;
+      border-radius: 9px;
+      border: 1px solid #34415f;
+      background: #10172a;
+      color: white;
+    }
+
+    button {
+      padding: 12px 17px;
+      border: 0;
+      border-radius: 9px;
+      background: #647fff;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #result {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      margin-top: 15px;
+      color: #c8d3f5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>✦ Nexus AI</h1>
+    <p>Your all-in-one AI workspace</p>
+  </header>
+
+  <main>
+    <h2>What do you want to create?</h2>
+    <div class="grid">
+      <div class="card"><h3>💬 AI Chat</h3>Ask questions and explore ideas.</div>
+      <div class="card"><h3>💻 App Builder</h3>Create website and app prototypes.</div>
+      <div class="card"><h3>🎨 Image Studio</h3>Plan and create visual content.</div>
+      <div class="card"><h3>🎬 Video Studio</h3>Plan videos and storyboards.</div>
+      <div class="card"><h3>🎵 Music Studio</h3>Develop lyrics and music ideas.</div>
+      <div class="card"><h3>👨‍💻 Coding</h3>Write and review code.</div>
+      <div class="card"><h3>📚 Study Assistant</h3>Learn and summarize topics.</div>
+      <div class="card"><h3>📁 Projects</h3>Organize your project ideas.</div>
+    </div>
+
+    <h2>AI Workspace</h2>
+    <textarea id="prompt" rows="4"
+      placeholder="Describe what you want Nexus AI to help you create..."></textarea>
+    <button onclick="runWorkspace()">Continue</button>
+    <div id="result" aria-live="polite"></div>
+  </main>
+
+  <script>
+    function runWorkspace() {
+      const prompt = document.getElementById("prompt").value.trim();
+      const result = document.getElementById("result");
+
+      if (!prompt) {
+        result.textContent = "Please describe what you want to create.";
+        return;
+      }
+
+      result.textContent =
+        "Your request:\n" + prompt +
+        "\n\nThis is the Nexus AI interface prototype. " +
+        "Connect an AI backend to generate actual responses.";
+    }
+  </script>
+</body>
+</html>
