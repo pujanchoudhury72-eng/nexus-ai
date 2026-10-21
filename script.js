@@ -3,7 +3,7 @@
 const $ = selector => document.querySelector(selector);
 const $$ = selector => document.querySelectorAll(selector);
 
-const API_URL = "https://nexus-ai-backend-lnrh.onrender.com";
+const API_URL = "https://nexus-ai-3ck3.onrender.com";
 
 const promptInput = $("#promptInput");
 const sendBtn = $("#sendBtn");
